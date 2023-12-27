@@ -1,0 +1,56 @@
+.searchbar-main{
+    background: #232323d6;
+    box-shadow: 0 8px 32px 0 rgba(39, 29, 39, 0.334);
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7px;
+    margin-bottom: 12px;
+    width: 90vw;
+}
+
+#searchbar-form { 
+    display:flex;
+    /* max-width: 90vw; */
+    padding: 10px;
+    height: fit-content;
+    
+}
+
+#searchbar-form  > input {
+    font-family: 'Fira Code', monospace;
+    border : none;
+    border-radius: 8px;
+    /* height: 25px; */
+    width: 65vw;
+
+    background-color: transparent;
+    color: rgb(250, 246, 252);
+    font-size: 1.35rem;
+    font-weight: 600;
+    display: inline-block;
+ 
+}
+
+.search-submit-btn { 
+    /* Search Icon */
+    background-color: transparent;
+    margin: 0;
+    border: none;
+    margin-top: 2px;
+    border-radius: 8px;
+    /* margin: 20px; */
+    display: inline-block;
+
+}
+
+.search-submit-btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+#searchbar-form > input:focus {
+    outline:none;
+}

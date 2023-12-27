@@ -1,0 +1,24 @@
+.StockTrackerDiv{
+    border-radius: 8px;
+    /* background-color: white; */
+    padding: 10px;
+    margin: 5px;
+    background: rgba(184, 184, 184, 0.41);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.042); */
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.StockTrackerDiv > div {
+    padding: 10px;
+    font-weight:700;
+    font-size: 1.2rem;
+    border: solid 1px rgb(183, 182, 182);
+    border-radius: 8px;
+    width: 150px;
+    margin: 5px;
+}
