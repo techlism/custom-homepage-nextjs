@@ -1,11 +1,12 @@
 
-
 html, body {
-background-image: linear-gradient(to top, #f8faf2 0%, white 100%);
-    
-overflow: hidden;
-margin: 0;
-padding: 0;
+    background-image: linear-gradient(to top, #f6f6df 0%, rgb(223, 255, 244) 100%);    
+    overflow:hidden;
+    margin: 0;
+    padding: 0;
+    @media (max-width: 750px) {
+        overflow: auto;
+    }
 }
   
 

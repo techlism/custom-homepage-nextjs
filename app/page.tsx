@@ -11,7 +11,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.dummyWrapper}>
         <SearchBar/>
-        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}} className={styles.subWrapper}>
           <QuickAccess/>
           <div className={styles.widgetsContainer}>
             <WeatherWidget/>
