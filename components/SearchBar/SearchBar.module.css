@@ -7,9 +7,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 7px;
-    margin-bottom: 12px;
+    /* margin-top: 7px; */
+    margin-bottom: 2vh;
     width: 90vw;
+    height: 8.3vh;
 }
 
 #searchbar-form { 
@@ -28,9 +29,9 @@
     width: 65vw;
 
     background-color: transparent;
-    color: rgb(250, 246, 252);
-    font-size: 1.35rem;
-    font-weight: 600;
+    color: rgb(246, 234, 252);
+    font-size: 1.25rem;
+    font-weight: 500;
     display: inline-block;
  
 }

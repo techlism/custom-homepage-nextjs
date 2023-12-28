@@ -3,7 +3,7 @@
     /* background-color: white; */
     padding: 10px;
     margin: 5px;
-    background: rgba(184, 184, 184, 0.41);
+    background: rgba(205, 204, 204, 0.171);
     /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.042); */
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
@@ -21,4 +21,10 @@
     border-radius: 8px;
     width: 150px;
     margin: 5px;
+}
+.StockTrackerDiv:hover {
+    background: linear-gradient(to right, rgba(203, 213, 250, 0.15), rgba(177, 246, 209, 0.15));
+    scale: 101.5%;
+    box-shadow: 1px 2px 2px 1px rgba(215, 180, 192, 0.755);
+
 }

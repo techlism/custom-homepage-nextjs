@@ -16,10 +16,10 @@ const QuickAccessIcon: React.FC<QuickAccessIconProps> = ({iconSrc, title, href})
     return(
         
             <div className={styling.iconDiv}>
-                <a href={href}>
+                <Link href={href}>
                     <Image src={iconSrc} alt={iconSrc} className={styling.iconImage} height={42} width={42} loading="lazy"/>
                     <p className={styling.iconPara}>{title}</p>
-                </a>
+                </Link>
             </div>
 
     )
