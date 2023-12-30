@@ -1,10 +1,14 @@
 
 html, body {
-    background-image: linear-gradient(to top, #87873d41 0%, rgb(223, 255, 244) 100%);    
+    /* background-image: linear-gradient(to top, #87873d41 0%, rgb(223, 255, 244) 100%);     */
+    background:radial-gradient(circle, rgba(255, 249, 67, 0.351) 0, #fce1e1d0 100%);
     overflow:hidden;
     margin: 0;
     padding: 0;
-    @media (max-width: 768px) {
+}
+
+@media (max-width: 770px) {
+    html,body{
         overflow: auto;
     }
 }

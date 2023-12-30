@@ -10,16 +10,19 @@
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     /* border: 1px solid rgba( 255, 255, 255, 0.18 );     */
-    transition:background 0.5s;
+    transition: background 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+
 }
 .iconImage {
     margin-top: 15px;
+    /* filter: hue-rotate(105deg); */
+    filter: invert(3%);
 }
 .iconPara{
     font-family: 'Fira Code', monospace;
     font-weight:600;
-    font-size: 1.1rem;
-    color: black;
+    font-size: 1rem;
+    color:#176B87;
     margin-bottom: 15px;
 }
 
@@ -29,8 +32,9 @@
 }
 
 .iconDiv:hover {
-    background: linear-gradient(to right, rgba(203, 213, 250, 0.15), rgba(177, 246, 209, 0.15));
-    scale: 101.5%;
-    box-shadow: 1px 2px 2px 1px rgba(215, 180, 192, 0.755);
+    background:radial-gradient(circle, rgba(23, 21, 21, 0.198) 0, #2626262c 100%);
+    scale: 101%;
+    box-shadow: 1px 2px 1px rgba(255, 0, 89, 0.353);
+    color: #04364A;
 
 }

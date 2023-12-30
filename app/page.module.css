@@ -10,10 +10,11 @@
     /* mask-image: radial-gradient(ellipse at center,rgba(0,0,0,1),transparent 100%); */
 }
 
+
 .subWrapper{
-    @media (max-width: 768px) {
-        display: block;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .widgetsContainer {
@@ -34,3 +35,15 @@
     /* margin-bottom: 7px; */
 }
 
+@media (max-width: 770px) {
+    .subWrapper{
+        /* display: block; */
+        flex-direction: column;
+    }
+    .widgetsContainer{
+        margin-left: 0;
+        margin-top: 20px;
+        width: 80vw;
+        height: max-content;
+    }
+}

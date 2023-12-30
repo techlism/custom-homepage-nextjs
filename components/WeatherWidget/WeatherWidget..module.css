@@ -7,10 +7,13 @@
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     text-align: center;
+    transition: background 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+    color:#176B87;
 }
 .weatherDiv:hover {
-    background: linear-gradient(to right, rgba(203, 213, 250, 0.15), rgba(177, 246, 209, 0.15));
-    scale: 101.5%;
-    box-shadow: 1px 2px 2px 1px rgba(215, 180, 192, 0.755);
+    background:radial-gradient(circle, rgba(23, 21, 21, 0.198) 0, #2626262c 100%);
+    scale: 101%;
+    box-shadow: 1px 2px 1px rgba(255, 0, 89, 0.353);
+    color: #04364A;
 
 }
