@@ -25,9 +25,7 @@
     font-family: 'Fira Code', monospace;
     border : none;
     border-radius: 8px;
-    /* height: 25px; */
     width: 65vw;
-
     background-color: transparent;
     color: rgb(246, 234, 252);
     font-size: 1.2rem;
@@ -45,7 +43,6 @@
     border-radius: 8px;
     /* margin: 20px; */
     display: inline-block;
-
 }
 
 .search-submit-btn:hover{

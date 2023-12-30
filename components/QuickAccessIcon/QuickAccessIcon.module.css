@@ -38,3 +38,12 @@
     color: #04364A;
 
 }
+@media (max-width: 770px) {
+    .iconImage{
+        height: 27px;
+        width: 27px;
+    }
+    .iconPara{
+        font-size: 0.8rem;
+    }
+}

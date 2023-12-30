@@ -38,7 +38,9 @@ const SearchBar = () =>{
                         ref={inputRef}
                     />
                     <button type="submit" className={styling['search-submit-btn']}>
-                        <SearchImage/>
+                        <div>
+                            <SearchImage/>
+                        </div>                    
                     </button>
                 </form>
             </div>

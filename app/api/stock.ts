@@ -53,9 +53,12 @@ let lastFetchTime: Date | null = null;
 
 const fetchNewData = async () => {
   try {
-    const response = await axios.get<SensexData>('https://sensex-data-demo-d628bdd08c5e.herokuapp.com/sensex-value');
-    cachedData = response?.data;
-    lastFetchTime = new Date();
+    const url = process.env.INDIAN_STOCK_MARKET_URL;
+    if(url){
+      const response = await axios.get<SensexData>(url);
+      cachedData = response?.data;
+      lastFetchTime = new Date();
+    }
   } catch (error) {
     throw new Error(`Unable to fetch SensexData.\n
     Error : ${error}`);
@@ -81,7 +84,6 @@ export const fetchSensexData = async (): Promise<SensexData> => {
   if (cachedData === null) {
     throw new Error('Unable to fetch Sensex data');
   }
-
   return cachedData;
 };
 
