@@ -7,12 +7,12 @@ export interface ChartResponse {
           regularMarketPrice: number;
           chartPreviousClose: number;
         };
-        // ... other properties
+        // ... other properties (not needed so didn't implemented)
       }[];
       // ... other properties
     };
 }
-  
+// for S&P500  
 export const fetchSnP = async (): Promise<{ regularMarketPrice: number; chartPreviousClose: number; change_percentage:string}> => {
     try {
         const response:AxiosResponse<ChartResponse> = await axios.get('https://query2.finance.yahoo.com/v8/finance/chart/%5EGSPC');
@@ -20,13 +20,10 @@ export const fetchSnP = async (): Promise<{ regularMarketPrice: number; chartPre
 
         if (result) {
             const { regularMarketPrice, chartPreviousClose } = result.meta;
-            let percentage = ((regularMarketPrice - chartPreviousClose) / 100);
+            let percentage = ((regularMarketPrice - chartPreviousClose) / 100).toPrecision(2);
             let change_percentage:string = '';
-            if(percentage > 0 ){
-              change_percentage='+'+percentage.toPrecision(2);
-            }
-            else{
-              change_percentage='-'+percentage.toPrecision(2);
+            if(Number(percentage) > 0 ){
+              change_percentage='+'+percentage;
             }
             
             return { regularMarketPrice, chartPreviousClose,change_percentage };
