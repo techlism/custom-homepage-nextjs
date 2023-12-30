@@ -25,6 +25,9 @@ export const fetchSnP = async (): Promise<{ regularMarketPrice: number; chartPre
             if(Number(percentage) > 0 ){
               change_percentage='+'+percentage;
             }
+            else{
+              change_percentage=percentage;
+            }
             
             return { regularMarketPrice, chartPreviousClose,change_percentage };
         } else {
