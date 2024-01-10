@@ -88,7 +88,7 @@ const linkObj = [
     {
         iconSrc: whatsappIcon,
         title: 'WhatsApp',
-        href: 'https://web.whatsapp.com/',
+        href: 'whatsapp://',
         key:12
     },
 ];
