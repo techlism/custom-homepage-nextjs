@@ -36,7 +36,7 @@ const StockTracker = () =>{
             <div>
                 <p>Sensex</p>
                 <p>{sensexData?.current_value}</p>
-                <p>{sensexData?.change_percentage}%</p>                
+                <p>{sensexData?.change_percentage}</p>                
             </div>
         </div>       
     )
