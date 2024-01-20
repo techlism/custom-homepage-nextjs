@@ -1,5 +1,7 @@
 'use server'
 import axios, { AxiosResponse } from "axios";
+import moment from 'moment-timezone';
+
 export interface ChartResponse {
     chart: {
       result: {
@@ -40,51 +42,53 @@ export const fetchSnP = async (): Promise<{ regularMarketPrice: number; chartPre
 };
 
 export interface SensexData {
-    current_value: string;
-    change_point: string;
-    change_percentage: string;
-    date: string;
-    time: string;
-    status: string;
+  current_value: string;
+  change_point: string;
+  change_percentage: string;
+  date: string;
+  time: string;
+  status: string;
 }
-  
+
 let cachedData: SensexData | null = null;
-let lastFetchTime: Date | null = null;
+let lastFetchTime: moment.Moment | null = null;
 
 const fetchNewData = async () => {
   try {
-    const url = process.env.INDIAN_STOCK_MARKET_URL;
-    if(url){
-      const response = await axios.get<SensexData>(url);
-      cachedData = response?.data;
-      lastFetchTime = new Date();
-    }
+      const url = process.env.INDIAN_STOCK_MARKET_URL;
+      if(url){
+          const response = await axios.get(url);
+          const data = response?.data["Sensex Value"];
+          cachedData = {
+              current_value: data["current_value"],
+              change_point: data["change_point"],
+              change_percentage: data["change_percentage"],
+              date: data["date"],
+              time: data["time"],
+              status: data["status"]
+          };
+          lastFetchTime = moment.tz('Asia/Kolkata');
+      }
   } catch (error) {
-    throw new Error(`Unable to fetch SensexData.\n
-    Error : ${error}`);
+      throw new Error(`Unable to fetch SensexData.\nError : ${error}`);
   }
 };
 
 export const fetchSensexData = async (): Promise<SensexData> => {
-  const marketOpenTime = new Date();
-  marketOpenTime.setHours(9, 15, 0); // Indian market opens at 9:15 AM
+  const now = moment.tz('Asia/Kolkata');
 
-  const marketCloseTime = new Date();
-  marketCloseTime.setHours(15, 30, 0); // Indian market closes at 3:30 PM
-
-  const now = new Date();
+  const marketOpenTime = now.clone().hour(9).minute(15).second(0); // Indian market opens at 9:15 AM
+  const marketCloseTime = now.clone().hour(15).minute(30).second(0); // Indian market closes at 3:30 PM
 
   if (cachedData === null || 
-      (now >= marketOpenTime && now <= marketCloseTime) || 
-      (lastFetchTime !== null && (now.getTime() - lastFetchTime.getTime()) > 1000 * 60 * 60 * 24)) {
-    // Fetch new data if no data is cached, or if the market is open, or if the cached data is more than 24 hours old
-    await fetchNewData();
+      (now.isBetween(marketOpenTime, marketCloseTime)) || 
+      (lastFetchTime !== null && now.diff(lastFetchTime, 'hours') > 24)) {
+      // Fetch new data if no data is cached, or if the market is open, or if the cached data is more than 24 hours old
+      await fetchNewData();
   }
 
   if (cachedData === null) {
-    throw new Error('Unable to fetch Sensex data');
+      throw new Error('Unable to fetch Sensex data');
   }
   return cachedData;
 };
-
-
